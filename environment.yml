@@ -1,4 +1,4 @@
-name: crypto
+name: bmac310
 channels:
   - defaults
 dependencies:

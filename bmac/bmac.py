@@ -316,5 +316,5 @@ async def main(base_dir):
                 await update_candle(handler, session, last_complete_run_time)
         except Exception as e:
             await report_error(handler, e)
-            divider('Restart after 1 minute', logger_=handler.logger)
-            await asyncio.sleep(60)
+            divider('Restart after 5 seconds', logger_=handler.logger)
+            await asyncio.sleep(5)

@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 import pytz
 
-DEFAULT_TZ = pytz.timezone('hongkong')
+DEFAULT_TZ = pytz.timezone('utc')
 
 
 def now_time() -> datetime:

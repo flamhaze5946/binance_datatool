@@ -1,0 +1,7 @@
+services:
+  supermix-datacenter:
+    container_name: bmac-datacenter
+    image: flamhaze5946/bmac:29241220.1.0.0
+    restart: always
+    volumes:
+      - "/opt/bmac/data:/app/data"

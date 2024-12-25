@@ -1,4 +1,5 @@
 import asyncio
+import time
 
 import aiohttp
 import pandas as pd
@@ -96,6 +97,7 @@ async def init_history(handler: BmacHandler, session: aiohttp.ClientSession):
 
         # 2.3 更新 symbol 状态
         round_finished_symbols = []
+        convert_time = time.time()
         for symbol, (not_enough, begin_time, num) in zip(fetch_symbols, results):
             last_begin_time[symbol] = begin_time
 
@@ -110,6 +112,7 @@ async def init_history(handler: BmacHandler, session: aiohttp.ClientSession):
 
         if round_finished_symbols:
             handler.logger.ok(f'{len(round_finished_symbols)} finished, {len(symbols_trading)} left')
+            print(f'convert use {time.time() - convert_time:.3f} seconds.')
 
     server_time, weight = await fetcher.get_time_and_weight()
     handler.logger.ok(f'History initialized, Server time: {server_time.tz_convert(DEFAULT_TZ)}, Used weight: {weight}')
