@@ -50,7 +50,8 @@ RUN pip install --no-cache-dir pip==23.3.1 && \
     xmltodict==0.13.0 \
     yarl==1.9.4 \
     websockets==12.0 \
-    colorama==0.4.6
+    colorama==0.4.6 \
+    polars==1.18.0
 
 # Set the entrypoint
 ENTRYPOINT ["python3", "cli.py", "bmac", "start", "/app/data/"]

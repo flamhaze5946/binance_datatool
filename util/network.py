@@ -2,6 +2,7 @@ import asyncio
 
 import aiohttp
 
+from api.binance.exceptions import BinanceAPIException, err_filter_dict
 from .log_kit import get_logger
 
 
